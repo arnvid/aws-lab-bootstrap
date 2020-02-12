@@ -3,10 +3,12 @@ The process described below is only initiated once per AWS account during bootst
 All terraform IaC depends on these resources:
 - The AWS S3 bucket is used by Terraform to store tfstate files
 - The AWS DynamoDB table is used by Terraform for state locking
+This requires terraform 0.11, the code is not compatible with terrafrom 0.12.
 
 ## 1: Create bucket and lock table used by backend
 ```
 mv state.tf state.tf.notyet
+terraform init
 terraform plan
 terraform apply
 ```
